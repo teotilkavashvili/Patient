@@ -5,11 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table'
 import { RouterModule } from '@angular/router';
+import { PatientListComponent } from './patient-list/patient-list.component';
 
 const route=[
   {
@@ -31,6 +32,9 @@ const route=[
     MatTableModule,
     RouterModule.forChild(route)
   ],
-  declarations: [PatientComponent]
+  declarations: [
+    PatientComponent,
+    PatientListComponent
+  ]
 })
 export class PatientModule { }

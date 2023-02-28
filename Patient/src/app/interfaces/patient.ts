@@ -4,7 +4,7 @@ export interface Patient {
     IdNumber:number,
     birthDate:Date,
     gender:string,
-    town:string,
+    city:string,
     address:string,
 }
 

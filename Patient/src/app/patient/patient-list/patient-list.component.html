@@ -1,0 +1,130 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="სახელი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="სახელი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef> 
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="გვარი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="გვარი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.surname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="IdNumber">
+      <th mat-header-cell *matHeaderCellDef> 
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="პირადი ნომერი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="პირადი ნომერი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.IdNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="birthDate">
+      <th mat-header-cell *matHeaderCellDef>
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="დაბადების თარიღი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="დაბადების თარიღი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.birthDate | date :'dd/MM/yy'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> 
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="სქესი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="სქესი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.gender}} </td>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> 
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="ქალაქი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="ქალაქი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.city}} </td>
+    </ng-container>
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> 
+        <div>
+          <mat-form-field
+            appearance="outline"
+            matTooltip="მისამართი">
+            <input 
+            matInput 
+            class="form-field" 
+            placeholder="მისამართი"
+            >
+          </mat-form-field>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let patient"> {{patient.address}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let patient"> 
+       
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

@@ -17,15 +17,15 @@ public getAllPatients(): Observable<Patient[]> {
 }
 
 public editPatient(patient: any): Observable<Patient> {
-  return this.http.patch<Patient>(`${this.baseUrl}/products/${patient.id}`, patient);
+  return this.http.patch<Patient>(`${this.baseUrl}/patients/${patient.id}`, patient);
 }
 
 public addPatient(patient: any): Observable<Patient> {
-  return this.http.post<Patient>(`${this.baseUrl}/products`, patient)
+  return this.http.post<Patient>(`${this.baseUrl}/patients`, patient)
 }
 
 public deletePatient(patientId:any): Observable<boolean> {
-  return this.http.delete<boolean>(`${this.baseUrl}/products/${patientId}`);
+  return this.http.delete<boolean>(`${this.baseUrl}/patients/${patientId}`);
 }
 
 }
